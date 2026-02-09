@@ -27,9 +27,9 @@ class TelemetryClient {
 
   trackException(error, properties = {}) {
     this._track('Exception', {
-      message: error.message,
-      stack: error.stack,
-      type: error.name,
+      message: error?.message,
+      stack: error?.stack,
+      type: error?.name,
       properties
     });
   }
@@ -74,7 +74,7 @@ class TelemetryClient {
         body: JSON.stringify({ items })
       });
     } catch (error) {
-      console.warn('Telemetry flush failed:', error.message);
+      console.warn('Telemetry flush failed:', error?.message);
     }
   }
 

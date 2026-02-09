@@ -11,11 +11,31 @@ class SecureHttpClient {
     this.timeout = config.timeout || 30000;
     this.interceptors = {
       request: [],
-      response: []
+      response: [],
+      error: []
     };
   }
 
+  // Add axios-like create method
+  create(config = {}) {
+    return new SecureHttpClient({
+      ...config,
+      baseURL: config.baseURL || this.baseURL,
+      headers: { ...this.headers, ...config.headers },
+      timeout: config.timeout || this.timeout
+    });
+  }
+
+  // Add axios-like isCancel method
+  static isCancel(error) {
+    return error && (error.name === 'AbortError' || error.message?.includes('abort'));
+  }
+
   async request(config) {
+    if (!config) {
+      throw new Error('Request config is required');
+    }
+    
     const url = this._buildURL(config.url);
     const headers = { ...this.headers, ...config.headers };
     const method = (config.method || 'GET').toUpperCase();
@@ -23,7 +43,15 @@ class SecureHttpClient {
     // Run request interceptors
     let requestConfig = { ...config, url, headers, method };
     for (const interceptor of this.interceptors.request) {
-      requestConfig = await interceptor(requestConfig);
+      try {
+        requestConfig = await interceptor(requestConfig);
+        if (!requestConfig) {
+          throw new Error('Request interceptor returned undefined config');
+        }
+      } catch (error) {
+        console.error('Request interceptor error:', error);
+        throw error;
+      }
     }
 
     try {
@@ -184,7 +212,15 @@ class SecureHttpClient {
 }
 
 export function createSecureHttpClient(config) {
-  return new SecureHttpClient(config);
+  const client = new SecureHttpClient(config);
+  
+  // Add isCancel as a static method on the instance for axios compatibility
+  client.isCancel = SecureHttpClient.isCancel;
+  
+  return client;
 }
+
+// Export isCancel as a standalone function for axios compatibility
+export const isCancel = SecureHttpClient.isCancel;
 
 export default createSecureHttpClient;

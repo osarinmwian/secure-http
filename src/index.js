@@ -14,7 +14,7 @@ let tls13Initialized = false;
       await TLSSecurityModule.forceTLS13();
       tls13Initialized = true;
     } catch (e) {
-      console.warn('TLS 1.3 auto-initialization failed:', e.message);
+      console.warn('TLS 1.3 auto-initialization failed:', e?.message);
     }
   }
 })();
@@ -36,7 +36,7 @@ export const updateSecurityProvider = async () => {
     const result = await TLSSecurityModule.updateSecurityProvider();
     return result;
   } catch (error) {
-    throw new Error(`Failed to update security provider: ${error.message}`);
+    throw new Error(`Failed to update security provider: ${error?.message}`);
   }
 };
 
@@ -70,7 +70,7 @@ export const testTLS13Support = async () => {
     const result = await TLSSecurityModule.testTLS13Support();
     return result;
   } catch (error) {
-    throw new Error(`Failed to test TLS: ${error.message}`);
+    throw new Error(`Failed to test TLS: ${error?.message}`);
   }
 };
 
@@ -87,7 +87,7 @@ export const forceTLS13 = async () => {
     const result = await TLSSecurityModule.forceTLS13();
     return result;
   } catch (error) {
-    throw new Error(`Failed to force TLS 1.3: ${error.message}`);
+    throw new Error(`Failed to force TLS 1.3: ${error?.message}`);
   }
 };
 
@@ -110,6 +110,21 @@ export const tls13Axios = createSecureHttpClient({
   },
 });
 
+// Add axios compatibility methods
+tls13Axios.create = function(config = {}) {
+  return createSecureHttpClient({
+    timeout: 120000,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    ...config
+  });
+};
+
+tls13Axios.isCancel = createSecureHttpClient.isCancel || ((error) => {
+  return error && (error?.name === 'AbortError' || error?.message?.includes('abort'));
+});
+
 const originalRequest = tls13Axios.request.bind(tls13Axios);
 tls13Axios.request = async function(config) {
   const monitor = MonitoringManager.getInstance();
@@ -130,7 +145,7 @@ tls13Axios.request = async function(config) {
   } catch (error) {
     if (monitor) {
       error.duration = Date.now() - config._requestStartTime;
-      monitor.performance.endOperation(config._requestId, false, { error: error.message });
+      monitor.performance.endOperation(config._requestId, false, { error: error?.message });
       const screenshot = monitor.captureScreenshotsOnError ? await monitor.screenshot.captureScreen() : null;
       monitor.performance.trackHttpRequest(config, error.response, error);
       monitor.telemetry.trackException(error, {
@@ -166,7 +181,7 @@ const createSecureHttpClientWithMonitoring = (config = {}) => {
         return response;
       } catch (error) {
         error.duration = Date.now() - requestConfig._requestStartTime;
-        monitor.performance.endOperation(requestConfig._requestId, false, { error: error.message });
+        monitor.performance.endOperation(requestConfig._requestId, false, { error: error?.message });
         const screenshot = monitor.captureScreenshotsOnError ? await monitor.screenshot.captureScreen() : null;
         monitor.performance.trackHttpRequest(requestConfig, error.response, error);
         monitor.telemetry.trackException(error, {
