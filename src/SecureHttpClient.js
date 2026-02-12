@@ -1,5 +1,4 @@
 import { Platform } from "react-native";
-import MonitoringManager from "./monitoring";
 import CryptoUtils from "./CryptoUtils";
 
 const hasFetch = typeof fetch !== "undefined";

@@ -1,14 +1,504 @@
-    Updating crates.io index
-warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: index.crates.io)
-warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: index.crates.io)
-warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: index.crates.io)
-error: failed to get `aes-gcm` as a dependency of package `secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto)`
+   0.023499458s  INFO prepare_target{force=false package_id=secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto) target="secure_http_crypto"}: cargo::core::compiler::fingerprint: fingerprint error for secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("secure_http_crypto", ["staticlib", "cdylib"], "/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/src/lib.rs", Edition2021) }
+   0.023528833s  INFO prepare_target{force=false package_id=secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto) target="secure_http_crypto"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/secure-http-crypto-48c47ebcf9456f09/lib-secure_http_crypto`
 
 Caused by:
-  download of config.json failed
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.026945125s  INFO prepare_target{force=false package_id=aes-gcm v0.10.3 target="aes_gcm"}: cargo::core::compiler::fingerprint: fingerprint error for aes-gcm v0.10.3/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("aes_gcm", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/aes-gcm-0.10.3/src/lib.rs", Edition2021) }
+   0.026957958s  INFO prepare_target{force=false package_id=aes-gcm v0.10.3 target="aes_gcm"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/aes-gcm-745ac5ba39552a0a/lib-aes_gcm`
 
 Caused by:
-  failed to download from `https://index.crates.io/config.json`
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.027270917s  INFO prepare_target{force=false package_id=aead v0.5.2 target="aead"}: cargo::core::compiler::fingerprint: fingerprint error for aead v0.5.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("aead", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/aead-0.5.2/src/lib.rs", Edition2021) }
+   0.027278250s  INFO prepare_target{force=false package_id=aead v0.5.2 target="aead"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/aead-feccc9ff3042a4e0/lib-aead`
 
 Caused by:
-  [6] Couldn't resolve host name (Could not resolve host: index.crates.io)
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.027483708s  INFO prepare_target{force=false package_id=crypto-common v0.1.7 target="crypto_common"}: cargo::core::compiler::fingerprint: fingerprint error for crypto-common v0.1.7/Check { test: false }/TargetInner { ..: lib_target("crypto_common", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crypto-common-0.1.7/src/lib.rs", Edition2018) }
+   0.027491417s  INFO prepare_target{force=false package_id=crypto-common v0.1.7 target="crypto_common"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/crypto-common-982518c8c3c3de92/lib-crypto_common`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.029395458s  INFO prepare_target{force=false package_id=aes v0.8.4 target="aes"}: cargo::core::compiler::fingerprint: fingerprint error for aes v0.8.4/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("aes", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/aes-0.8.4/src/lib.rs", Edition2021) }
+   0.029408333s  INFO prepare_target{force=false package_id=aes v0.8.4 target="aes"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/aes-f7efbb1c732b1287/lib-aes`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.029672750s  INFO prepare_target{force=false package_id=cipher v0.4.4 target="cipher"}: cargo::core::compiler::fingerprint: fingerprint error for cipher v0.4.4/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("cipher", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cipher-0.4.4/src/lib.rs", Edition2021) }
+   0.029680958s  INFO prepare_target{force=false package_id=cipher v0.4.4 target="cipher"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/cipher-0e15e98ed2675a89/lib-cipher`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.029930375s  INFO prepare_target{force=false package_id=inout v0.1.4 target="inout"}: cargo::core::compiler::fingerprint: fingerprint error for inout v0.1.4/Check { test: false }/TargetInner { ..: lib_target("inout", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/inout-0.1.4/src/lib.rs", Edition2021) }
+   0.029940917s  INFO prepare_target{force=false package_id=inout v0.1.4 target="inout"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/inout-f31d1bcbb0d3893f/lib-inout`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.030290292s  INFO prepare_target{force=false package_id=ctr v0.9.2 target="ctr"}: cargo::core::compiler::fingerprint: fingerprint error for ctr v0.9.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ctr", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ctr-0.9.2/src/lib.rs", Edition2021) }
+   0.030300708s  INFO prepare_target{force=false package_id=ctr v0.9.2 target="ctr"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/ctr-c0b7d73fbda5edce/lib-ctr`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.030496958s  INFO prepare_target{force=false package_id=ghash v0.5.1 target="ghash"}: cargo::core::compiler::fingerprint: fingerprint error for ghash v0.5.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ghash", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ghash-0.5.1/src/lib.rs", Edition2021) }
+   0.030504417s  INFO prepare_target{force=false package_id=ghash v0.5.1 target="ghash"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/ghash-3b4e5b3099312b27/lib-ghash`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.030833708s  INFO prepare_target{force=false package_id=polyval v0.6.2 target="polyval"}: cargo::core::compiler::fingerprint: fingerprint error for polyval v0.6.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("polyval", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/polyval-0.6.2/src/lib.rs", Edition2021) }
+   0.030842625s  INFO prepare_target{force=false package_id=polyval v0.6.2 target="polyval"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/polyval-0c875b58886fd9fa/lib-polyval`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.031137000s  INFO prepare_target{force=false package_id=universal-hash v0.5.1 target="universal_hash"}: cargo::core::compiler::fingerprint: fingerprint error for universal-hash v0.5.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("universal_hash", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/universal-hash-0.5.1/src/lib.rs", Edition2021) }
+   0.031144167s  INFO prepare_target{force=false package_id=universal-hash v0.5.1 target="universal_hash"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/universal-hash-adae444d0db8bb04/lib-universal_hash`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.031601333s  INFO prepare_target{force=false package_id=hmac v0.12.1 target="hmac"}: cargo::core::compiler::fingerprint: fingerprint error for hmac v0.12.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("hmac", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hmac-0.12.1/src/lib.rs", Edition2018) }
+   0.031610917s  INFO prepare_target{force=false package_id=hmac v0.12.1 target="hmac"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/hmac-fea544aca2a79ab8/lib-hmac`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.031787042s  INFO prepare_target{force=false package_id=digest v0.10.7 target="digest"}: cargo::core::compiler::fingerprint: fingerprint error for digest v0.10.7/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("digest", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/digest-0.10.7/src/lib.rs", Edition2018) }
+   0.031794208s  INFO prepare_target{force=false package_id=digest v0.10.7 target="digest"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/digest-ab1c03468de491f7/lib-digest`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.032019833s  INFO prepare_target{force=false package_id=block-buffer v0.10.4 target="block_buffer"}: cargo::core::compiler::fingerprint: fingerprint error for block-buffer v0.10.4/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("block_buffer", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block-buffer-0.10.4/src/lib.rs", Edition2018) }
+   0.032026917s  INFO prepare_target{force=false package_id=block-buffer v0.10.4 target="block_buffer"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/block-buffer-341fb4c66139aeab/lib-block_buffer`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.032184167s  INFO prepare_target{force=false package_id=ring v0.17.14 target="ring"}: cargo::core::compiler::fingerprint: fingerprint error for ring v0.17.14/Check { test: false }/TargetInner { ..: lib_target("ring", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ring-0.17.14/src/lib.rs", Edition2021) }
+   0.032191083s  INFO prepare_target{force=false package_id=ring v0.17.14 target="ring"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/ring-793813a89f32785d/lib-ring`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.032534208s  INFO prepare_target{force=false package_id=ring v0.17.14 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for ring v0.17.14/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ring-0.17.14/build.rs", Edition2021) }
+   0.032541125s  INFO prepare_target{force=false package_id=ring v0.17.14 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/ring-fe09609203debf3b/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::custom_build::build_work
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.033163542s  INFO prepare_target{force=false package_id=sha2 v0.10.9 target="sha2"}: cargo::core::compiler::fingerprint: fingerprint error for sha2 v0.10.9/Check { test: false }/TargetInner { ..: lib_target("sha2", ["lib"], "/Users/osarinmwiannoel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sha2-0.10.9/src/lib.rs", Edition2018) }
+   0.033172875s  INFO prepare_target{force=false package_id=sha2 v0.10.9 target="sha2"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/sha2-4916b139c2234114/lib-sha2`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.033496000s  INFO prepare_target{force=false package_id=secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto) target="secure_http_crypto"}: cargo::core::compiler::fingerprint: fingerprint error for secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("secure_http_crypto", ["staticlib", "cdylib"], "/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/src/lib.rs", Edition2021) }
+   0.033503958s  INFO prepare_target{force=false package_id=secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto) target="secure_http_crypto"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto/target/debug/.fingerprint/secure-http-crypto-0ede5210ec464b63/test-lib-secure_http_crypto`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   Compiling ring v0.17.14
+    Checking crypto-common v0.1.7
+    Checking inout v0.1.4
+    Checking block-buffer v0.10.4
+    Checking universal-hash v0.5.1
+    Checking aead v0.5.2
+    Checking cipher v0.4.4
+    Checking digest v0.10.7
+    Checking polyval v0.6.2
+    Checking aes v0.8.4
+    Checking ctr v0.9.2
+    Checking hmac v0.12.1
+    Checking sha2 v0.10.9
+    Checking ghash v0.5.1
+    Checking aes-gcm v0.10.3
+    Checking secure-http-crypto v0.1.0 (/Users/osarinmwiannoel/Documents/react-native-secure-http/rust-crypto)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.59s
